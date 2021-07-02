@@ -1,5 +1,5 @@
 -- Connect to Redis
-local redis = require 'redis'
+local redis = require 'resty.redis'
 local red = redis:new()
 red:connect('127.0.0.1', 6379)
 
