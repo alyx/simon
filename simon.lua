@@ -1,7 +1,7 @@
 -- Connect to Redis
 local redis = require 'resty.redis'
 local red = redis:new()
-red:connect('127.0.0.1', 6379)
+red:connect(os.getenv('RESTY_REDIS_HOST'), 6379)
 
 -- Get session ID from cookie and host from headers
 local sid = ngx.var[ngx.var.cookie_key or 'cookie_connect.sid']
